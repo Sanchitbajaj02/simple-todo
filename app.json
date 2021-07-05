@@ -4,6 +4,11 @@
     "slug": "todo-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
+    "platform": [
+      "ios",
+      "android",
+      "web"
+    ],
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -17,13 +22,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sanchitbajaj02.todoapp",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.sanchitbajaj02.todoapp",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
