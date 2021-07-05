@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 import Header from './Components/Header';
+import TodoItem from './Components/TodoItem';
 
 export default function Main() {
 
@@ -13,7 +14,13 @@ export default function Main() {
   ]);
 
   const renderItem = ({ item }) => {
-    return <Text>{item.text}</Text>
+    return <TodoItem item={item} pressHandler={pressHandler} />
+  }
+
+  const pressHandler = (key) => {
+    setTodos(prevTodos => {
+      return prevTodos.filter(todo => todo.key != key)
+    })
   }
 
   return (
