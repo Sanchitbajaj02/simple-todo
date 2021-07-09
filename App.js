@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './Main';
+import Main from './Components/Main';
 export default function App() {
   return (
     <React.Fragment>
