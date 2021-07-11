@@ -6,12 +6,14 @@ import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
 
 export default function Main() {
-  const [todos, setTodos] = useState([
-    { text: "buy coffee", key: "1" },
-    { text: "create an app", key: "2" },
-    { text: "play on the switch", key: "3" },
-  ]);
+  const [todos, setTodos] = useState([]);
 
+  /*
+  Some sample data
+  { text: "buy coffee", key: "1" },
+  { text: "create an app", key: "2" },
+  { text: "play on the switch", key: "3" },
+  */
   const renderItem = ({ item }) => {
     return <TodoItem item={item} pressHandler={pressHandler} />;
   };
@@ -23,9 +25,13 @@ export default function Main() {
   };
 
   const submitHandler = (text) => {
-    setTodos((prevTodos) => {
-      return [{ text: text, key: Math.random().toString() }, ...prevTodos];
-    });
+    if (text != null && text !== "") {
+      setTodos((prevTodos) => {
+        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
+      });
+    } else {
+      console.log("empty string");
+    }
   };
 
   return (

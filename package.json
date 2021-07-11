@@ -7,6 +7,7 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "git": "https://github.com/Sanchitbajaj02/todo-react-native.git",
   "dependencies": {
     "expo": "~42.0.0",
     "expo-status-bar": "~1.0.4",

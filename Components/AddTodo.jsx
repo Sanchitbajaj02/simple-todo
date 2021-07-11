@@ -6,6 +6,12 @@ const AddTodo = ({ submitHandler }) => {
 
   const changeHandler = (val) => {
     setText(val);
+    console.log(val);
+  };
+
+  const submitAndClear = (text) => {
+    submitHandler(text);
+    changeHandler("");
   };
 
   return (
@@ -14,9 +20,10 @@ const AddTodo = ({ submitHandler }) => {
         style={styles.input}
         placeholder="new todo..."
         onChangeText={changeHandler}
+        value={text}
       />
       <Button
-        onPress={() => submitHandler(text)}
+        onPress={() => submitAndClear(text)}
         title="add todo"
         color="blueviolet"
       />
