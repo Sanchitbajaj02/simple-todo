@@ -4,16 +4,15 @@ import { StyleSheet, Text, View } from "react-native";
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>My Todo App</Text>
+      <Text style={styles.title}>✨My Todo App✨</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   header: {
-    height: 80,
-    paddingTop: 40,
-    paddingBottom: 20,
+    height: 90,
+    paddingTop: 45,
     backgroundColor: "blueviolet",
   },
   title: {

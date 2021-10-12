@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 
 const TodoItem = ({ item, pressHandler }) => {
   return (
     <React.Fragment>
-      <Text style={styles.item}>
-        {item.text}
+      <View style={styles.item}>
+        <Text>{item.text}</Text>
+
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
           <Image
             id="img"
@@ -13,7 +14,7 @@ const TodoItem = ({ item, pressHandler }) => {
             source={require("../assets/delete.png")}
           />
         </TouchableOpacity>
-      </Text>
+      </View>
     </React.Fragment>
   );
 };
@@ -21,13 +22,13 @@ const TodoItem = ({ item, pressHandler }) => {
 const styles = StyleSheet.create({
   item: {
     padding: 16,
-    // marginVertical: 12,
     marginTop: 16,
     borderColor: "#bbb",
     borderWidth: 1,
     borderStyle: "dashed",
     borderRadius: 10,
     display: "flex",
+    flexDirection: "row",
     justifyContent: "space-between",
   },
   image: {

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Alert } from "react-native";
 
 import Header from "./Header";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
 
 export default function Main() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { text: "buy coffee", key: "1" },
+    { text: "create an app", key: "2" },
+    { text: "play on the switch", key: "3" },
+  ]);
 
   /*
   Some sample data
@@ -14,6 +18,7 @@ export default function Main() {
   { text: "create an app", key: "2" },
   { text: "play on the switch", key: "3" },
   */
+
   const renderItem = ({ item }) => {
     return <TodoItem item={item} pressHandler={pressHandler} />;
   };
@@ -25,12 +30,15 @@ export default function Main() {
   };
 
   const submitHandler = (text) => {
-    if (text != null && text !== "") {
+    if (text.length > 3) {
       setTodos((prevTodos) => {
         return [{ text: text, key: Math.random().toString() }, ...prevTodos];
       });
     } else {
       console.log("empty string");
+      Alert.alert("Oops!", "Todo must be over 3 characters long", [
+        { text: "Understood", onPress: () => console.log("alert closed") },
+      ]);
     }
   };
 
