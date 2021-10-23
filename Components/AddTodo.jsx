@@ -25,7 +25,7 @@ const AddTodo = ({ submitHandler }) => {
       <Button
         onPress={() => submitAndClear(text)}
         title="add todo"
-        color="blueviolet"
+        color="#668aff"
       />
     </View>
   );

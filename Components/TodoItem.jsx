@@ -9,7 +9,7 @@ const TodoItem = ({ item, pressHandler }) => {
         <Text>{item.text}</Text>
 
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
-          <MaterialIcons name="delete" size={30} color="black" />
+          <MaterialIcons name="delete" size={30} color="#4a7dff" />
         </TouchableOpacity>
       </View>
     </React.Fragment>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   item: {
     padding: 16,
     marginTop: 16,
-    borderColor: "#bbb",
+    borderColor: "#ccd8ff",
     borderWidth: 1,
     borderStyle: "dashed",
     borderRadius: 10,
