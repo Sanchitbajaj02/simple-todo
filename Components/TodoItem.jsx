@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const TodoItem = ({ item, pressHandler }) => {
   return (
@@ -8,11 +9,7 @@ const TodoItem = ({ item, pressHandler }) => {
         <Text>{item.text}</Text>
 
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
-          <Image
-            id="img"
-            style={styles.image}
-            source={require("../assets/delete.png")}
-          />
+          <MaterialIcons name="delete" size={30} color="black" />
         </TouchableOpacity>
       </View>
     </React.Fragment>
@@ -27,13 +24,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderStyle: "dashed",
     borderRadius: 10,
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-  },
-  image: {
-    width: 30,
-    height: 30,
   },
 });
 

@@ -6,7 +6,7 @@ const AddTodo = ({ submitHandler }) => {
 
   const changeHandler = (val) => {
     setText(val);
-    console.log(val);
+    // console.log(val);
   };
 
   const submitAndClear = (text) => {

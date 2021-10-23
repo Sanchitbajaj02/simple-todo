@@ -11,6 +11,7 @@ import {
 import Header from "./Header";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
+// import Sandbox from "./Sandbox";
 
 export default function Main() {
   const [todos, setTodos] = useState([
@@ -50,6 +51,7 @@ export default function Main() {
   };
 
   return (
+    // <Sandbox />
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
@@ -63,7 +65,11 @@ export default function Main() {
           {/* to form */}
           <AddTodo submitHandler={submitHandler} />
           <View style={styles.list}>
-            <FlatList data={todos} renderItem={renderItem} />
+            <FlatList
+              data={todos}
+              renderItem={renderItem}
+              showsVerticalScrollIndicator={false}
+            />
           </View>
         </View>
       </View>
@@ -77,9 +83,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
-    padding: 40,
+    padding: 30,
+    flex: 1,
   },
   list: {
+    flex: 1,
     marginTop: 20,
   },
 });
