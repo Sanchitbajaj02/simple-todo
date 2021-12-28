@@ -14,7 +14,6 @@ exports.list_all_tasks = (req, res) => {
 
 exports.create_a_task = (req, res) => {
   let newTask = new Task({
-    taskId: req.body.taskId,
     name: req.body.name,
   });
 

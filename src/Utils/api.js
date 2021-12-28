@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3000/task/";
+// const baseURL = "http://localhost:3000/task/";
+const baseURL = "https://simple-todo-rn.herokuapp.com/tasks";
 
 const instance = axios.create({
   baseURL: baseURL,

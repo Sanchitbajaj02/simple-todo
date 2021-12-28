@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -13,9 +13,29 @@ import Header from "./Header";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
 
+import { showAllTasks, createTask } from "../Utils/api";
+
 export default function Main() {
   const [todos, setTodos] = useState([]);
 
+  const dataLoader = () => {
+    showAllTasks()
+      .then((resp) => {
+        console.log(resp.result);
+        setTodos(resp.result);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    dataLoader();
+    // showAllTasks()
+    //   .then((resp) => {
+    //     console.log(resp.result);
+    //     setTodos(resp.result);
+    //   })
+    //   .catch((err) => console.log(err));
+  }, []);
   /*
   Some sample data
   { text: "buy coffee", key: "1" },
@@ -24,7 +44,14 @@ export default function Main() {
   */
 
   const renderItem = ({ item }) => {
-    return <TodoItem item={item} pressHandler={pressHandler} />;
+    return (
+      <TodoItem
+        key={item._id}
+        item={item}
+        pressHandler={pressHandler}
+        dataLoader={dataLoader}
+      />
+    );
   };
 
   const pressHandler = (key) => {
@@ -35,9 +62,13 @@ export default function Main() {
 
   const submitHandler = (text) => {
     if (text.length > 3) {
-      setTodos((prevTodos) => {
-        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
-      });
+      createTask({ name: text })
+        .then((resp) => {
+          console.log(resp);
+          setTodos(...todos, [resp.result]);
+          dataLoader();
+        })
+        .catch((err) => console.log(err));
     } else {
       console.log("empty string");
       Alert.alert("Oops!", "Todo must be over 3 characters long", [
@@ -62,6 +93,7 @@ export default function Main() {
             <FlatList
               data={todos}
               renderItem={renderItem}
+              keyExtractor={(item) => item._id}
               showsVerticalScrollIndicator={false}
             />
           </View>
