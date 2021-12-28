@@ -7,14 +7,15 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
-  "git": "https://github.com/Sanchitbajaj02/todo-react-native.git",
+  "git": "https://github.com/Sanchitbajaj02/simple-todo.git",
   "dependencies": {
-    "expo": "~42.0.0",
-    "expo-status-bar": "~1.0.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-web": "~0.13.12"
+    "axios": "^0.24.0",
+    "expo": "^43.0.0",
+    "expo-status-bar": "~1.1.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "^0.64.3",
+    "react-native-web": "~0.17.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

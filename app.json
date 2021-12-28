@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "todo-react-native",
-    "slug": "todo-react-native",
-    "version": "1.5.0",
+    "name": "simple-todo",
+    "slug": "simple-todo",
+    "version": "0.1.0",
     "orientation": "portrait",
-    "icon": "./assets/favicon.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/favicon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,19 +19,19 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sanchitbajaj02.todoapp",
-      "buildNumber": "1.5.0"
+      "buildNumber": "0.1.0"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/favicon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.sanchitbajaj02.todoapp",
-      "versionCode": 5
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "icon": "./assets/icon.png"
     },
-    "description": ""
+    "description": "Simple Todo Application made by React Native"
   }
 }

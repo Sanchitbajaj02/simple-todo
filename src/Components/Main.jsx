@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   View,
+  Text,
   FlatList,
   Alert,
   TouchableWithoutFeedback,
@@ -11,14 +12,9 @@ import {
 import Header from "./Header";
 import TodoItem from "./TodoItem";
 import AddTodo from "./AddTodo";
-// import Sandbox from "./Sandbox";
 
 export default function Main() {
-  const [todos, setTodos] = useState([
-    { text: "buy coffee", key: "1" },
-    { text: "create an app", key: "2" },
-    { text: "play on the switch", key: "3" },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   /*
   Some sample data
@@ -51,16 +47,14 @@ export default function Main() {
   };
 
   return (
-    // <Sandbox />
     <TouchableWithoutFeedback
       onPress={() => {
         Keyboard.dismiss();
         console.log("Dismiss Keyboard");
-      }}
-    >
+      }}>
       <View style={styles.container}>
-        {/* Header */}
         <Header />
+
         <View style={styles.content}>
           {/* to form */}
           <AddTodo submitHandler={submitHandler} />

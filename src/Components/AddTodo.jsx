@@ -18,7 +18,7 @@ const AddTodo = ({ submitHandler }) => {
     <View>
       <TextInput
         style={styles.input}
-        placeholder="new todo..."
+        placeholder="Add new todo..."
         onChangeText={changeHandler}
         value={text}
       />
