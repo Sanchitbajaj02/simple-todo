@@ -2,13 +2,13 @@
   "expo": {
     "name": "simple-todo",
     "slug": "simple-todo",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -19,15 +19,15 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.sanchitbajaj02.todoapp",
-      "buildNumber": "0.1.0"
+      "buildNumber": "0.1.1"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff"
       },
       "package": "com.sanchitbajaj02.todoapp",
-      "versionCode": 1
+      "versionCode": 2
     },
     "web": {
       "icon": "./assets/icon.png"
