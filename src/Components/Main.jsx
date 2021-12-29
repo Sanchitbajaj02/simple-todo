@@ -7,6 +7,7 @@ import {
   Alert,
   TouchableWithoutFeedback,
   Keyboard,
+  RefreshControl,
 } from "react-native";
 
 import Header from "./Header";
@@ -15,8 +16,13 @@ import AddTodo from "./AddTodo";
 
 import { showAllTasks, createTask } from "../Utils/api";
 
+const wait = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
+
 export default function Main() {
   const [todos, setTodos] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
 
   const dataLoader = () => {
     showAllTasks()
@@ -26,6 +32,11 @@ export default function Main() {
       })
       .catch((err) => console.log(err));
   };
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(1000).then(() => setRefreshing(false));
+  }, []);
 
   useEffect(() => {
     dataLoader();
@@ -95,6 +106,9 @@ export default function Main() {
               renderItem={renderItem}
               keyExtractor={(item) => item._id}
               showsVerticalScrollIndicator={false}
+              refreshControl={
+                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+              }
             />
           </View>
         </View>
