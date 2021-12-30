@@ -35,17 +35,13 @@ export default function Main() {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    wait(1000).then(() => setRefreshing(false));
+    dataLoader();
+
+    wait(2000).then(() => setRefreshing(false));
   }, []);
 
   useEffect(() => {
     dataLoader();
-    // showAllTasks()
-    //   .then((resp) => {
-    //     console.log(resp.result);
-    //     setTodos(resp.result);
-    //   })
-    //   .catch((err) => console.log(err));
   }, []);
   /*
   Some sample data
@@ -123,11 +119,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
-    padding: 30,
+    padding: 20,
     flex: 1,
   },
   list: {
     flex: 1,
     marginTop: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+
+    paddingHorizontal: 5,
+    backgroundColor: "white",
+    borderRadius: 10,
   },
 });
